@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org" class="js sizes customelements history pointerevents postmessage postmessage-structuredclones webgl websockets cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox picture srcset webworkers" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Admin</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+    <!-- CSS
+	============================================ -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/companee HTML_files/bootstrap.min.css">
+
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="css/companee HTML_files/font-awesome.min.css">
+    <link rel="stylesheet" href="css/companee HTML_files/flaticon.css">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="css/companee HTML_files/slick.css">
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="css/companee HTML_files/style.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+
+                <!-- Header Logo Start -->
+                <div class="col">
+                    <div class="header-logo">
+                        <img src="css/logo.png" alt="Site Logo"></a>
+                    </div>
+                </div><!-- Header Logo End -->
+
+                <!-- Offcanvas Toggle Start -->
+                <div class="col-auto d-lg-none d-flex align-items-center">
+                    <button class="offcanvas-toggle">
+                        <span></span>
+                    </button>
+                </div>
+                <!-- Offcanvas Toggle End -->
+
+                <!-- Header Links Start -->
+                <div class="header-links col-auto order-lg-3">
+                    <a th:href="@{/home}" data-bs-toggle="modal" data-bs-target="#loginSignupModal" data-bs-target-sub="#login">Log out</a>
+                </div><!-- Header Links End -->
+
+                 <!-- Header Menu Start -->
+                <nav id="main-menu" class="main-menu col-lg-auto order-lg-2">
+                    <ul>
+                        <li><a th:href="@{/admin}">Students List</a></li>
+                        <li><a th:href="@{/addcompanee}">Add Company</a></li>
+                        <li><a th:href="@{/companylist}">Company List</a></li>
+                        <li><a th:href="@{/cv}">CvList</a></li>
+                    </ul>
+                </nav>
+                <!-- Header Menu End -->
+            </div>
+        </div>
+    </header>
+
+
+ 
+
+    <!-- Page Heading Section Start -->
+    <div class="page-heading-section section bg-parallax" data-bg-image="assets/images/bg/bg-1.jpg" data-overlay="50" style="background-image: url(&quot;companyimg/students.jfif&quot;); background-position: 50% 0px;">
+        <div class="container">
+            <div class="page-heading-content text-center">
+                <h3 class="title">Students List</</h3>
+            </div>
+        </div>
+    </div>
+    <!-- Page Heading Section End -->
+
+    
+	<div class="container my-2">
+        <table border="1" class="table table-striped table-responsive-md">
+            <thead>
+                <tr>
+					<th>Username</th>
+					<th>Email</th>
+			</tr>
+            </thead>
+            <tbody>
+                <tr th:each="user : ${users}">
+                	<td th:text="${user.userName}"></td>
+                	<td th:text="${user.email}"></td>	
+            </tr>
+            </tbody>
+        </table>
+        
+        
+    </div>
+</body></html>

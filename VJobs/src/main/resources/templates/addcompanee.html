@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org" class="js sizes customelements history pointerevents postmessage postmessage-structuredclones webgl websockets cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox picture srcset webworkers" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add Company</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- CSS
+	============================================ -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/add job HTML_files/bootstrap.min.css">
+
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="css/add job HTML_files/font-awesome.min.css">
+    <link rel="stylesheet" href="css/add job HTML_files/flaticon.css">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="css/add job HTML_files/slick.css">
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="css/add job HTML_files/style.css">
+
+</head>
+
+<body>
+	<header class="header">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+
+                <!-- Header Logo Start -->
+                <div class="col">
+                    <div class="header-logo">
+                        <img src="css/logo.png" alt="Site Logo"></a>
+                    </div>
+                </div><!-- Header Logo End -->
+
+                <!-- Offcanvas Toggle Start -->
+                <div class="col-auto d-lg-none d-flex align-items-center">
+                    <button class="offcanvas-toggle">
+                        <span></span>
+                    </button>
+                </div>
+                <!-- Offcanvas Toggle End -->
+
+                <!-- Header Links Start -->
+                <div class="header-links col-auto order-lg-3">
+                    <a th:href="@{/home}" data-bs-toggle="modal" data-bs-target="#loginSignupModal" data-bs-target-sub="#login">Log out</a>
+                </div><!-- Header Links End -->
+
+                 <!-- Header Menu Start -->
+                <nav id="main-menu" class="main-menu col-lg-auto order-lg-2">
+                    <ul>
+                        <li><a th:href="@{/admin}">Students List</a></li>
+                        <li><a th:href="@{/addcompanee}">Add Company</a></li>
+                        <li><a th:href="@{/companylist}">Company List</a></li>
+                        <li><a th:href="@{/cv}">CvList</a></li>
+                    </ul>
+                </nav>
+                <!-- Header Menu End -->
+            </div>
+        </div>
+    </header>
+   
+
+    <!-- Page Heading Section Start -->
+    <div class="page-heading-section section bg-parallax" data-bg-image="companyimg/addcompany.jpg" data-overlay="50" style="background-image: url(&quot;companyimg/addcompany.jpg&quot;); background-position: 50% 0px;">
+        <div class="container">
+            <div class="page-heading-content text-center">
+                <h3 class="title">Add Company</h3>
+            </div>
+        </div>
+    </div>
+    <!-- Page Heading Section End -->
+
+    <!-- Create Job Start -->
+    <div class="section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="create-job-form col-lg-10 mx-auto">
+                    <form th:action="@{/saveCompany}" th:object="${companee}" method="POST">
+                        <div class="row mb-n3">
+                            <div class="col-md-6 col-12 mb-3">
+                                <label for="companyName">Company Name</label>
+                                <input type="text" id="companyName" th:field="*{name}">
+                            </div>
+                            <div class="col-md-6 col-12 mb-3">
+                                <label for="positions">Positions</label>
+                                <input type="text" id="positions" th:field="*{positions}">
+                            </div>
+							<div class="col-md-6 col-12 mb-3">
+                                <label for="location">Location</label>
+                                <input type="text" id="location" th:field="*{location}" >
+                            </div>
+                            
+                            <div class="col-12 mb-3">
+                              <button class="btn btn-primary" type="submit" >Save Company</button>
+                            </div>
+                        </div>
+                        <div class="row"></div>
+                        <input type="hidden" th:field="*{id}"> 
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+</body></html>
